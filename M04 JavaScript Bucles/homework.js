@@ -129,7 +129,13 @@ function operadoresLogicos(num1, num2, num3) {
    // Si todos los argumentos son cero, retornar ---> "Error".
    // Si no se cumple ninguna de las condiciones anteriores, retornar false.
    // Tu código:
+   if (num1 === 0 && num2 === 0 && num3 === 0) {return "Error";
+} else if (num1 < 0 || num2 < 0 || num3 < 0) {return("Hay negativos");
+} else if (num1 > 0 && num1 > num2 && num1 > num3) {return "Numero 1 es mayor y positivo";
+} else if (num3 > num1 && num3> num2) {return num3 + 1;
+} else return(false);
 }
+
 
 function esPrimo(num) {
    // Retornar true si "num" es primo.
@@ -138,26 +144,54 @@ function esPrimo(num) {
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
+if (num < 0 || num=== 0 || num === 1)return(false);
+if (num === 2) return(true); 
+for (var i=2; i < num && num % i !== 0;i++) 
+          {console.log ("comprobando si es primo")};
+if (i === num ) {return(true);
+} else       
+  return(false);
 }
+
+   
+      
+      
+   
+ 
+
 
 function esVerdadero(valor) {
    // Si "valor" es verdadero retornar "Soy verdadero".
    // Caso contrario, retornar "Soy falso".
    // Tu código:
+   if (valor === false) {return("Soy falso");
+   }else if (valor === true) {return("Soy verdadero");
 }
-
+}
 function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
    // Tu código:
-}
+   
+   if (num > 99 && num < 1000) {return true;
+   } else return false;
+   }
 
 function doWhile(num) {
    // Implementar una función que aumente el valor recibido en 5 hasta un límite de 8 veces.
    // Retornar el valor final.
    // Utilizar el bucle Do-While.
    // Tu código:
+   let  i =  0;
+   do {
+   num = num + 5;
+   i = i + 1;
+    }   while (i < 8 );
+   return num;
+  
+
 }
+
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {
@@ -175,4 +209,4 @@ module.exports = {
    esVerdadero,
    tieneTresDigitos,
    doWhile,
-};
+}
