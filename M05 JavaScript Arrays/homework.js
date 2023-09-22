@@ -136,31 +136,66 @@ function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
+      var str = num.toString();
+   var strArray = str.split('');
+   if (strArray[0] == 9) {return true;
+   }else 
+      return false;
 }
 
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
+   var igual = true;
+   for ( var i = 0 ; i < array.length ; i++){
+      if (array[i]=== array[0]){igual = true;
+      }else igual =  false;
+   };
+   return igual;
 }
 
 function mesesDelAño(array) {
    // El arreglo contiene algunos meses del año desordenados. Debes recorrerlo, buscar los meses "Enero",
-   // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
+   // "" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
-}
+var tresMeses = [];
+   
+    for (var i=0; i < array.length ; i++){
+      if (array[i]==="Enero" || array[i]==="Marzo" || array[i]==="Noviembre"){
+         tresMeses.push(array[i]);
+      }
+    }
+    if (tresMeses.includes("Enero")===true && tresMeses.includes("Marzo")===true && tresMeses.includes("Noviembre")===true){
+      return tresMeses;
+   } else  return("No se encontraron los meses pedidos");
+}; 
+
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   var tabla = [];
+   for (var i = 0; i < 11; i++){
+      tabla.push(i*6);
+   }
+   return tabla;
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   var mayores = [];
+   for (var i=0; i < array.length ; i++){
+      if (array[i] > 100){
+         mayores.push(array[i]);
+      }
+};
+return mayores;
+
 }
 
 /* ----------------------------------------------------------------------------------
@@ -174,6 +209,20 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   var arreglo = [];
+var suma = num;
+      for (var i = 0; i < 10 ; i++){
+        suma = suma + 2;
+       arreglo.push(suma);
+       
+       if (i === suma){
+                          break;
+       }
+       
+   } 
+      if (i >= 9) {
+         return arreglo;
+      }else return("Se interrumpió la ejecución"); 
 }
 
 function continueStatement(num) {
